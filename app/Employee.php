@@ -3,8 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use phpDocumentor\Reflection\Location;
+
 
 class Employee extends Model{
     protected $fillable = [
@@ -14,11 +13,11 @@ class Employee extends Model{
        'location_id'
     ];
 
-    public function locations(){
-        return $this -> BelongsTo(Location::class);
+    public function location(){
+        return $this -> belongsTo(Location::class);
     }
 
-    public function tasks(){
-        return $this -> belongsToMany(task::class);
+    public function task(){
+        return $this -> belongsToMany(Task::class);
     }
 }

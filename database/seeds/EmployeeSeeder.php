@@ -18,7 +18,7 @@ class EmployeeSeeder extends Seeder
         -> make ()
         -> each(function ($emp) {
 
-          $loca = Location ::inRandomOrder() -> first();
+          $loca = Location::inRandomOrder() -> first();
           $emp -> location() -> associate($loca);
 
           $emp -> save();
